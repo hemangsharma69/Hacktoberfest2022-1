@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+
+int makeBeautiful(string str) {
+	int count=0;
+    if(str[0]==str[1]){
+    str[1]=1;
+    str[0]=0;
+    //count++;
+  }
+  char a=str[0];
+  char b=str[1];
+  for(int i=2; i<str.length();i+=2){
+    if(str[i]!=a){
+      count++;
+    }
+   
+  }
+
+  for(int j=3; j<str.length();j+=2){
+    if(str[j]!=b){
+      count++;
+    }
+   
+  }
+  for(int i=0;i<str.length();i++){
+    cout<<str[i]<<" ";
+  }
+  return count;
+}
+
+
+
+
+
+int main() {
+  string str;
+  cin>>str;
+  cout<<endl;
+  cout<<makeBeautiful(str);
+}
